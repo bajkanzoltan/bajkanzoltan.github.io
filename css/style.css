@@ -13,8 +13,87 @@ html{
     line-height: 1.4;
 }
 
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+/* nav styles */
+
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+.hamburger{
+    display: block;
+    cursor: pointer;
+  }
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+.hamburger.active .bar:nth-child(2){
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+ }
+
+ .nav-menu{
+  position: absolute;
+  top: -100%;
+  flex-direction: column;
+  width: 90%;
+  text-align: center;
+  transition: 0.3s;
+}
+
+
+
+.nav-item:hover, .nav-item:focus{
+    background-color: #fff;
+    color: black;
+    transition: 0.3s;
+}
+
+.nav-menu.active{
+  top: 3.5rem;
+}
+
+.nav-link{
+    width: 100%;
+    display: inline-block;
+    padding: 0.8rem;
+}
+
+.wrapper.active{
+    margin-top: 8rem;
+    transition: 0.3s;
+}
+
+/* main styles*/
+
 .wrapper{
     padding: 1rem;
+    transition: 0.3s;
 }
 
 body{
@@ -48,10 +127,6 @@ h1, h2{
     }
 }
 
-a, a:visited {
-    text-decoration: none;
-    color: inherit;
-}
 
 .about-button{
     text-align: center;
@@ -80,6 +155,10 @@ a, a:visited {
 
 .about-open{
     display: none;
+}
+.about-open.open{
+    display: block;
+    margin-bottom: 1rem;
 }
 
 .portfolio_section{
@@ -155,4 +234,31 @@ a, a:visited {
 
 .project-text{
     font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.portfolio_section:last-of-type{
+    padding-bottom: 3rem;
+}
+
+footer{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: #191919;
+    height: 4rem;
+    width: 100%;
+    box-shadow: 0 0 2rem black;
+    border-top: 1px solid #434343;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo{
+    display: inline-block;
+    padding:10px;
+}
+
+.footer-logo:first-of-type{
+    border-right: 2px solid #434343;
 }
