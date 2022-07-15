@@ -25,7 +25,7 @@ ol, ul{
 /* nav styles */
 
 .navbar{
-    min-height: 70px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,6 +87,61 @@ ol, ul{
 .wrapper.active{
     margin-top: 8rem;
     transition: 0.3s;
+}
+
+@media screen and (min-width: 700px){
+    .hamburger{
+        display: none;
+    }
+
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        box-shadow: 0 0 2rem black;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border-bottom: 1px solid #434343;
+        position: fixed;
+        background-color: rgb(25,24,26);
+        z-index: 11;
+    }
+
+    .nav-branding{
+        display: inline-block;
+        padding: 1.3rem 0.5rem;
+        border-right:1px solid #434343;
+        width: 4rem;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        position: static;
+    }
+
+    .nav-item{
+        padding: 0.5rem 1rem;
+        border-right: 1px solid #434343;
+    }
+
+    .wrapper{ 
+        margin-top: 5rem;
+        margin-left: 6rem;
+    }
+
+    main{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .portfolio_section{
+        width: 49%;
+    }
 }
 
 /* main styles*/
@@ -241,7 +296,7 @@ h1, h2{
     padding-bottom: 3rem;
 }
 
-footer{
+.side-nav{
     display: flex;
     position: fixed;
     bottom: 0;
@@ -252,13 +307,45 @@ footer{
     border-top: 1px solid #434343;
     align-items: center;
     justify-content: center;
+    z-index: 4;
 }
 
-.footer-logo{
+.side-nav-logo{
     display: inline-block;
     padding:10px;
 }
 
-.footer-logo:first-of-type{
+.side-nav-logo:first-of-type{
     border-right: 2px solid #434343;
+}
+
+@media screen and (min-width: 700px){
+    .side-nav{
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 4rem;
+        z-index: 10;
+        box-shadow: none;
+        border-top: none;
+        border-right:1px solid #434343;
+    }
+
+    .side-nav-logo{
+        height: 4rem;
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .side-nav-logo:first-of-type{
+        border-right: none;
+        border-top:  1px solid #434343;
+        border-bottom: 1px solid #434343;
+    }
 }
